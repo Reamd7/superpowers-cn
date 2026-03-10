@@ -1,70 +1,70 @@
 ---
 name: executing-plans
-description: Use when you have a written implementation plan to execute in a separate session with review checkpoints
+description: 当你已经有一个书面的实现计划，并需要在单独会话中执行它且包含审查检查点时使用
 ---
 
-# Executing Plans
+# 执行计划
 
-## Overview
+## 概述
 
-Load plan, review critically, execute all tasks, report when complete.
+加载计划，进行严格审查，执行所有任务，并在完成时汇报。
 
-**Announce at start:** "I'm using the executing-plans skill to implement this plan."
+**开始时要明确说明：** "I'm using the executing-plans skill to implement this plan."
 
-**Note:** Tell your human partner that Superpowers works much better with access to subagents. The quality of its work will be significantly higher if run on a platform with subagent support (such as Claude Code or Codex). If subagents are available, use superpowers:subagent-driven-development instead of this skill.
+**注意：** 要告诉用户，Superpowers 在能使用子代理的平台上效果会好得多。如果运行环境支持子代理（例如 Claude Code 或 Codex），工作质量会明显更高。如果子代理可用，应使用 `superpowers:subagent-driven-development`，而不是这个 skill。
 
-## The Process
+## 流程
 
-### Step 1: Load and Review Plan
-1. Read plan file
-2. Review critically - identify any questions or concerns about the plan
-3. If concerns: Raise them with your human partner before starting
-4. If no concerns: Create TodoWrite and proceed
+### 第一步：加载并审查计划
+1. 阅读计划文件
+2. 进行严格审查，识别你对计划的任何问题或顾虑
+3. 如果有顾虑：在开始前先向用户提出
+4. 如果没有顾虑：创建 TodoWrite，然后继续
 
-### Step 2: Execute Tasks
+### 第二步：执行任务
 
-For each task:
-1. Mark as in_progress
-2. Follow each step exactly (plan has bite-sized steps)
-3. Run verifications as specified
-4. Mark as completed
+对每个任务：
+1. 标记为 `in_progress`
+2. 严格按每个步骤执行（计划已经拆成小步）
+3. 按计划要求运行验证
+4. 标记为 `completed`
 
-### Step 3: Complete Development
+### 第三步：完成开发
 
-After all tasks complete and verified:
-- Announce: "I'm using the finishing-a-development-branch skill to complete this work."
-- **REQUIRED SUB-SKILL:** Use superpowers:finishing-a-development-branch
-- Follow that skill to verify tests, present options, execute choice
+在所有任务都完成并验证后：
+- 宣告："I'm using the finishing-a-development-branch skill to complete this work."
+- **必需的子 skill：** 使用 `superpowers:finishing-a-development-branch`
+- 按该 skill 的要求验证测试、展示选项并执行用户选择
 
-## When to Stop and Ask for Help
+## 什么时候必须停下并求助
 
-**STOP executing immediately when:**
-- Hit a blocker (missing dependency, test fails, instruction unclear)
-- Plan has critical gaps preventing starting
-- You don't understand an instruction
-- Verification fails repeatedly
+**出现以下情况要立刻停止执行：**
+- 遇到阻塞项（缺依赖、测试失败、说明不清）
+- 计划本身存在关键缺口，导致无法开始
+- 你不理解某条指令
+- 验证反复失败
 
-**Ask for clarification rather than guessing.**
+**要请求澄清，不要靠猜。**
 
-## When to Revisit Earlier Steps
+## 什么时候回到前面的步骤
 
-**Return to Review (Step 1) when:**
-- Partner updates the plan based on your feedback
-- Fundamental approach needs rethinking
+**以下情况应回到“审查计划”阶段：**
+- 用户根据你的反馈更新了计划
+- 基本实现思路需要重想
 
-**Don't force through blockers** - stop and ask.
+**不要硬顶着 blocker 往前做。** 停下来，提问。
 
-## Remember
-- Review plan critically first
-- Follow plan steps exactly
-- Don't skip verifications
-- Reference skills when plan says to
-- Stop when blocked, don't guess
-- Never start implementation on main/master branch without explicit user consent
+## 记住
+- 先严格审查计划
+- 严格按计划执行
+- 不要跳过验证
+- 计划要求引用 skill 时就照做
+- 被阻塞就停，不要猜
+- 没有用户明确同意，不要在 `main/master` 分支上直接开始实现
 
-## Integration
+## 集成关系
 
-**Required workflow skills:**
-- **superpowers:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
-- **superpowers:writing-plans** - Creates the plan this skill executes
-- **superpowers:finishing-a-development-branch** - Complete development after all tasks
+**必需的工作流 skills：**
+- **`superpowers:using-git-worktrees`** - 开始前必须先建立隔离工作区
+- **`superpowers:writing-plans`** - 这个 skill 所执行的计划就是由它生成的
+- **`superpowers:finishing-a-development-branch`** - 所有批次完成后用于收尾
