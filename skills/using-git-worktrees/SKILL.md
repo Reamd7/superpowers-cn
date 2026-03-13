@@ -179,7 +179,7 @@ Tests passing (47 tests, 0 failures)
 Ready to implement auth feature
 ```
 
-## 红旗
+## Red Flag
 
 **绝不要：**
 - 在未确认目录被忽略的情况下创建项目内 worktree

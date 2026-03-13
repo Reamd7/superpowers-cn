@@ -165,7 +165,7 @@ git worktree remove <worktree-path>
 - **问题：** 误删工作成果
 - **修复：** 必须要求用户手动输入 `discard`
 
-## 红旗
+## Red Flag
 
 **绝不要：**
 - 在测试失败时继续往下走

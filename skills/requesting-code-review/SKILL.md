@@ -89,7 +89,7 @@ You: [Fix progress indicators]
 - 合并前做审查
 - 卡住时做审查
 
-## 红旗
+## Red Flag
 
 **绝不要：**
 - 因为“这个很简单”就跳过审查

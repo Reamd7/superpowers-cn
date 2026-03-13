@@ -504,7 +504,7 @@ Write code before test? Delete it. Start over.
 | "Tests after achieve same goals" | Tests-after = "what does this do?" Tests-first = "what should this do?" |
 ```
 
-### 建立红旗列表
+### 建立Red Flag列表
 
 让代理在开始找借口时能立即自检：
 
@@ -616,7 +616,7 @@ step2 [label="read file"];
 - [ ] 识别测试中出现的**新**借口
 - [ ] 增加明确反制（如果是纪律型 skill）
 - [ ] 基于所有测试轮次建立借口表
-- [ ] 建立红旗列表
+- [ ] 建立Red Flag列表
 - [ ] 重新测试，直到足够结实
 
 **质量检查：**
